@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Session;
-use Carbon\Carbon;
 use DB;
 
 class Track extends Model
@@ -50,15 +49,14 @@ class Track extends Model
         for ($i=0; $i <= $listLenght; $i++)
         {
             if ($clock == 720) {
-                $init = $this->convertMinsToHours($clock);
-                $schedule[] = $init .  " Lunch";
+                $schedule[] = "12:00 Lunch";
                 $clock += 60;
             }
 
             $init = $this->convertMinsToHours($clock);
 
             if ($i == $listLenght) {
-                $schedule[] = $init .  " fim";
+                $schedule[] = "17:00 Networking Event";
                 break;
             }
 
@@ -66,7 +64,7 @@ class Track extends Model
 
             $clock += $session['duration'];
 
-            $schedule[] = $init . " " . $session['name'];
+            $schedule[] = $init . " " . $session['name'] . " " . $session['duration'] . "min";
         }
 
         return $schedule;

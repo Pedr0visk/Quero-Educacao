@@ -17,6 +17,8 @@ A chave para resolver o problema proposto, era achar a maneira mais equilibrada 
 Através da modelagem matemática eu percebi que eu poderia criar uma relação "peso x quantidade" das sessões pois, como que todos os horários são multíplos de 5, podemos ter uma novo atributo chamado peso.
 Sendo assim, consegui visualizar uma maneira de encaixar uma palestra em função da relação "peso x quantidade". Aí para resolver o problema, bastou criar essa relação através de uma matriz 3D que relacionava esses 3 atributos: peso, quantidade, pesoXquantidade, para podermos decidir qual caminho da árvore de possibilidades iríamos descer.
 
+Acredito que o meu algoritmo possa ser melhorado afim de reduzir a sua complexidade para O(n log n).
+
 ## Arquitetura da aplicação
 Procurei utilizar o padrão de desenvolvimento SOLID. 
 Motivos:

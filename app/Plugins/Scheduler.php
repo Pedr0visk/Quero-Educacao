@@ -12,9 +12,11 @@ class Scheduler
      * @param session
      * @param timeInterval
      */
-    public function createSchedule($sessions, $timeIntervals)
+    public function createSchedule($sessions)
     {
         $this->relateWeightQuantity($sessions);
+
+        $timeIntervals = $this->generateIntervals($sessions);
 
         foreach ($timeIntervals as $i => $track) {
 
@@ -32,8 +34,8 @@ class Scheduler
     /**
      * decrease de time interval amount
      */
-    private function decreaseTime($time, $p, $i) {
-
+    private function decreaseTime($time, $p, $i)
+    {
         $item = $this->score[$p];
 
         $total = $time - $item['duration'];
@@ -54,8 +56,8 @@ class Scheduler
     /**
      * update points on score
      */
-    private function updatePoints($dur): void {
-
+    private function updatePoints($dur): void
+    {
         $this->score = $this->score->map(function ($item) use ($dur) {
             if ($item['duration'] == $dur)
                 $item['points'] -= $item['weight'];
@@ -67,8 +69,8 @@ class Scheduler
     /**
      * creates an array that relates weight and quantity of sessions list
      */
-    private function relateWeightQuantity($list): void {
-
+    private function relateWeightQuantity($list): void
+    {
         $this->sessions = $list->groupBy('duration');
 
         $score = $list->countBy('duration');
@@ -83,5 +85,25 @@ class Scheduler
         })->sortByDesc('points')->values();
 
         $this->score = $score;
+    }
+
+    private function generateIntervals($sessions)
+    {
+        $intervals = [];
+
+        $amount = $sessions->sum(function ($item) {
+            return $item['duration'];
+        });
+
+        $rounds = ceil($amount / 420);
+        $rest = 420 * $rounds - $amount;
+
+        for ($i=0; $i < $rounds; $i++) {
+            $intervals[] = [180, 240];
+        }
+
+        $intervals[$rounds - 1][1] -= intval($rest);
+
+        return $intervals;
     }
 }

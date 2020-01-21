@@ -12,10 +12,9 @@ class LectureController extends Controller
 {
     public function store(Scheduler $scheduler, Request $request)
     {
-        $timeIntervals = [[180, 240], [180, 185]];
         $sessions = $request->data;
 
-        $schedule = $scheduler->createSchedule($sessions, $timeIntervals);
+        $schedule = $scheduler->createSchedule($sessions);
 
         Lecture::createAll($schedule);
 
@@ -33,7 +32,7 @@ class LectureController extends Controller
                 'data'  => $track->schedule
             ];
         }
-
+        dd($data);
         return response()->json(['data' => $data]);
     }
 
