@@ -10,8 +10,12 @@ Infelizmente, pela decorrência dos poucos dias para resolução desse problema 
 ## Instruções usar a API
 
 Há duas rotas disponíveis:
-- [POST - Rota para criar palestra](https://gentle-lowlands-75922.herokuapp.com/api/lectures)
-- [GET - Rota para exibir palestra](https://gentle-lowlands-75922.herokuapp.com/api/lectures/1)
+
+Rota para criação da palestra
+- [POST - https://gentle-lowlands-75922.herokuapp.com/api/lectures ](https://gentle-lowlands-75922.herokuapp.com/api/lectures)
+
+Rota para exibir a palestra
+- [GET - https://gentle-lowlands-75922.herokuapp.com/api/lectures/{id}](https://gentle-lowlands-75922.herokuapp.com/api/lectures/1)
 
 Obs: O parâmetro 1 é o id da palestra que será criada, apenas te poupei o trabalho de ter que buscar o id.
 
