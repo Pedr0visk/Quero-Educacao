@@ -8,6 +8,12 @@ class Scheduler
     protected $sessions;
     protected $schedule;
 
+    /**
+     * Create a schedule to lecture
+     *
+     * @param session
+     * @param timeInterval
+     */
     public function createSchedule($sessions, $timeIntervals)
     {
         $this->relateWeightQuantity($sessions);
@@ -25,6 +31,9 @@ class Scheduler
         return $this->schedule;
     }
 
+    /**
+     * decrease de time interval amount
+     */
     private function decreaseTime($time, $p, $i) {
 
         $item = $this->score[$p];
@@ -44,6 +53,9 @@ class Scheduler
         return $this->decreaseTime($time, $p+1, $i);
     }
 
+    /**
+     * update points on score
+     */
     private function updatePoints($dur): void {
 
         $this->score = $this->score->map(function ($item) use ($dur) {
@@ -54,6 +66,9 @@ class Scheduler
         })->sortByDesc('points')->values();
     }
 
+    /**
+     * creates an array that relates weight and quantity of sessions
+     */
     private function relateWeightQuantity($list): void {
 
         $this->sessions = $list->groupBy('duration');
