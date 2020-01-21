@@ -1,13 +1,19 @@
 ## Resumo
 Primeiramente gostaria de agradecer à todos pela oportunidade de poder me juntar ao time de desenvolvimento da <a href="https://quero.education/">Quero Educação</a>.
 
-<b>Link para a API: <b> <a href="#">Quero Educação</a>
-
 Esse projeto demonstra apenas algumas de minhas habilidades com POO (Programação orientada à objetos), Laravel 6 e PHP7. O Laravel possui muitos recursos avançados para projetos mais complexos. É um framework excelente para se trabalhar com arrays e estrutura de dados e, por isso, foi tranquilo implementar a solução lógica para o problema proposto. 
 
 Infelizmente, pela decorrência dos poucos dias para resolução desse problema e motivos particulares, não pude implementar todos os recursos avançados que eu gostaria. Acrescento também, que o código pode ser melhorado para que a performace do projeto seja beneficiada. Por isso deixarei aqui um link para um projeto meu no GitHub que explora algumas técnicas avançadas de Laravel como: Service Container, Macros, Pipelines, Repository Pattern e etc.
 
 <a href="https://github.com/Pedr0visk/Laravel-Advanced-6">Link para o projeto no GitHub</a>
+
+## Instruções usar a API
+
+Há duas rotas disponíveis:
+- [POST - Rota para criar palestra](https://gentle-lowlands-75922.herokuapp.com/api/lectures)
+- [GET - Rota para exibir palestra](https://gentle-lowlands-75922.herokuapp.com/api/lectures/1)
+
+Obs: O parâmetro 1 é o id da palestra que será criada, apenas te poupei o trabalho de ter que buscar o id.
 
 
 ## O Problema - Solução
