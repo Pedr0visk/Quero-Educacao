@@ -3,12 +3,10 @@
 namespace Tests\Feature\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Lecture;
 use App\Models\Track;
 use App\Models\Session;
-
 class LectureManagementTest extends TestCase
 {
     use RefreshDatabase;
@@ -16,6 +14,7 @@ class LectureManagementTest extends TestCase
     /** @test */
     public function lectures_can_be_created()
     {
+        $this->withoutExceptionHandling();
         $response = $this->post('api/lectures', $this->data());
 
         $response->assertStatus(201);

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Models\Lecture;
 use App\Models\Track;
 use App\Plugins\Scheduler;
+use App\Http\Controllers\Controller;
 
 class LectureController extends Controller
 {

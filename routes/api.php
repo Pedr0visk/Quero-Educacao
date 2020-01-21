@@ -2,5 +2,5 @@
 
 use Illuminate\Http\Request;
 
-Route::post('/lectures', 'LectureController@store');
-Route::get('/lectures/{lecture}', 'LectureController@show');
+Route::post('/lectures', 'Api\LectureController@store');
+Route::get('/lectures/{lecture}', 'Api\LectureController@show');

@@ -20,10 +20,6 @@ class CreateSessionsTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('track_id')->nullable();
-
-            $table->foreign('track_id')
-                 ->references('id')->on('tracks')
-                 ->onDelete('cascade');
         });
     }
 

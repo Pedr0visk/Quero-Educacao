@@ -19,10 +19,6 @@ class CreateTracksTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('lecture_id')->nullable();
-
-            $table->foreign('lecture_id')
-                 ->references('id')->on('lectures')
-                 ->onDelete('cascade');
         });
     }
 

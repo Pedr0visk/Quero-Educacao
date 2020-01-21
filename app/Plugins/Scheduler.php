@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Plugins;
-
 class Scheduler
 {
     protected $score;
@@ -67,7 +65,7 @@ class Scheduler
     }
 
     /**
-     * creates an array that relates weight and quantity of sessions
+     * creates an array that relates weight and quantity of sessions list
      */
     private function relateWeightQuantity($list): void {
 
