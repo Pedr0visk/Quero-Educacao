@@ -18,7 +18,7 @@ class LectureController extends Controller
 
         Lecture::createAll($schedule);
 
-        return response()->json(['message' => 'Lecture created successufully'], 201);
+        return response()->json(['message' => 'Lectures created successufully'], 201);
     }
 
     public function show(Lecture $lecture)

@@ -16,8 +16,8 @@ class Lecture extends Model
     public static function createAll($items)
     {
         return DB::transaction(function () use ($items) {
-
             $tracks = collect($items)->map(function ($sessions, $index) {
+                $index += 1;
                 return Track::createAll([
                     'title' => 'Track ' . $index,
                     'sessions' => $sessions
