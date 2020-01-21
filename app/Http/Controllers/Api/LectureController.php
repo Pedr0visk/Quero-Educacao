@@ -32,7 +32,7 @@ class LectureController extends Controller
                 'data'  => $track->schedule
             ];
         }
-        dd($data);
+
         return response()->json(['data' => $data]);
     }
 
